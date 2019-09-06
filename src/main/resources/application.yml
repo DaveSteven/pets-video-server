@@ -1,0 +1,23 @@
+server:
+  port: 9001
+
+spring:
+  profiles:
+    active: dev
+  datasource:
+    username: root
+    password: 59ea27d2
+    url: jdbc:mysql://localhost:3306/pets-video?useSSL=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
