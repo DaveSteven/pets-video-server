@@ -7,10 +7,10 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class UsersFans {
+public class UserLikeVideos {
     private String id;
 
     private String userId;
 
-    private String fanId;
+    private String videoId;
 }

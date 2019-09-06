@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pets.video.dao.UsersReportMapper" >
-  <resultMap id="BaseResultMap" type="com.pets.video.data.entity.UsersReport" >
+<mapper namespace="com.pets.video.dao.UserReportMapper" >
+  <resultMap id="BaseResultMap" type="com.pets.video.data.entity.UserReport" >
     <id column="id" property="id" jdbcType="VARCHAR" />
     <result column="deal_user_id" property="dealUserId" jdbcType="VARCHAR" />
     <result column="deal_video_id" property="dealVideoId" jdbcType="VARCHAR" />
@@ -16,23 +16,23 @@
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select 
     <include refid="Base_Column_List" />
-    from users_report
+    from user_report
     where id = #{id,jdbcType=VARCHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
-    delete from users_report
+    delete from user_report
     where id = #{id,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pets.video.data.entity.UsersReport" >
-    insert into users_report (id, deal_user_id, deal_video_id, 
+  <insert id="insert" parameterType="com.pets.video.data.entity.UserReport" >
+    insert into user_report (id, deal_user_id, deal_video_id, 
       title, content, userid, 
       create_date)
     values (#{id,jdbcType=VARCHAR}, #{dealUserId,jdbcType=VARCHAR}, #{dealVideoId,jdbcType=VARCHAR}, 
       #{title,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, #{userid,jdbcType=VARCHAR}, 
       #{createDate,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.pets.video.data.entity.UsersReport" >
-    insert into users_report
+  <insert id="insertSelective" parameterType="com.pets.video.data.entity.UserReport" >
+    insert into user_report
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         id,
@@ -80,8 +80,8 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pets.video.data.entity.UsersReport" >
-    update users_report
+  <update id="updateByPrimaryKeySelective" parameterType="com.pets.video.data.entity.UserReport" >
+    update user_report
     <set >
       <if test="dealUserId != null" >
         deal_user_id = #{dealUserId,jdbcType=VARCHAR},
@@ -104,8 +104,8 @@
     </set>
     where id = #{id,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pets.video.data.entity.UsersReport" >
-    update users_report
+  <update id="updateByPrimaryKey" parameterType="com.pets.video.data.entity.UserReport" >
+    update user_report
     set deal_user_id = #{dealUserId,jdbcType=VARCHAR},
       deal_video_id = #{dealVideoId,jdbcType=VARCHAR},
       title = #{title,jdbcType=VARCHAR},

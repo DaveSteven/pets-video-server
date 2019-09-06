@@ -1,9 +1,7 @@
 package com.pets.video.dao;
 
 import com.pets.video.data.entity.Comments;
-import org.apache.ibatis.annotations.Mapper;
 
-@Mapper
 public interface CommentsMapper {
     int deleteByPrimaryKey(String id);
 

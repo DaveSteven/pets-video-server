@@ -1,9 +1,7 @@
 package com.pets.video.dao;
 
 import com.pets.video.data.entity.Videos;
-import org.apache.ibatis.annotations.Mapper;
 
-@Mapper
 public interface VideosMapper {
     int deleteByPrimaryKey(String id);
 
